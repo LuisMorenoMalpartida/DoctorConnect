@@ -1,0 +1,180 @@
+.patients {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  min-height: 500px;
+}
+
+.patients h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  border-bottom: 2px solid #1abc9c;
+  padding-bottom: 10px;
+}
+
+.patients-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px 15px 12px 40px;
+  border: 2px solid #e1e8ed;
+  border-radius: 25px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 15px center;
+  background-size: 16px;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #1abc9c;
+  box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.1);
+}
+
+.patients-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.patients-table th {
+  background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+  color: white;
+  font-weight: 600;
+  padding: 16px;
+  text-align: left;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.patients-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f3f4;
+  color: #2c3e50;
+  transition: background-color 0.2s ease;
+}
+
+.patients-table tr:hover td {
+  background-color: #f8f9fa;
+}
+
+.patients-table tr:last-child td {
+  border-bottom: none;
+}
+
+.view-btn {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(41, 128, 185, 0.2);
+}
+
+.view-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(41, 128, 185, 0.3);
+}
+
+.view-all-btn {
+  background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 20px auto 0;
+  min-width: 200px;
+  box-shadow: 0 4px 6px rgba(26, 188, 156, 0.2);
+}
+
+.view-all-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(26, 188, 156, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .patients-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-box {
+    max-width: 100%;
+  }
+  
+  .patients-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .patients-table th,
+  .patients-table td {
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+}
+
+/* Animation for table rows */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.patients-table tbody tr {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.patients-table tbody tr:nth-child(1) { animation-delay: 0.05s; }
+.patients-table tbody tr:nth-child(2) { animation-delay: 0.1s; }
+.patients-table tbody tr:nth-child(3) { animation-delay: 0.15s; }
+.patients-table tbody tr:nth-child(4) { animation-delay: 0.2s; }
+.patients-table tbody tr:nth-child(5) { animation-delay: 0.25s; }
+
+/* Status indicators */
+.status-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-stable { background-color: #27ae60; }
+.status-treatment { background-color: #f39c12; }
+.status-critical { background-color: #e74c3c; }
