@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# Ignorar dependencias de Node
+hospital_react/node_modules/
+
 # testing
 /coverage
 
